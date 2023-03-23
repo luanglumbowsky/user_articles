@@ -12,10 +12,11 @@ import '../data/remote_data_sources/articles_remote_data_source.dart' as _i4;
 import '../data/remote_data_sources/authors_remote_data_source.dart' as _i6;
 import '../domain/repositories/articles_repository.dart' as _i5;
 import '../domain/repositories/authors_repository.dart' as _i7;
-import '../features/articles/cubit/articles_cubit.dart' as _i9;
+import '../features/article_details/cubit/articles_details_cubit.dart' as _i9;
+import '../features/articles/cubit/articles_cubit.dart' as _i10;
 import '../features/home/cubit/home_cubit.dart' as _i8;
 import 'injection_container.dart'
-    as _i10; // ignore_for_file: unnecessary_lambdas
+    as _i11; // ignore_for_file: unnecessary_lambdas
 
 // ignore_for_file: lines_longer_than_80_chars
 /// initializes the registration of provided dependencies inside of [GetIt]
@@ -36,9 +37,11 @@ _i1.GetIt $initGetIt(_i1.GetIt get,
       remoteDataSource: get<_i6.AuthorsRemoteRetrofitDataSource>()));
   gh.factory<_i8.HomeCubit>(
       () => _i8.HomeCubit(authorsRepository: get<_i7.AuthorsRepository>()));
-  gh.factory<_i9.ArticlesCubit>(() =>
-      _i9.ArticlesCubit(articlesRepository: get<_i5.ArticlesRepository>()));
+  gh.factory<_i9.ArticleDetailsCubit>(() => _i9.ArticleDetailsCubit(
+      articlesRepository: get<_i5.ArticlesRepository>()));
+  gh.factory<_i10.ArticlesCubit>(() =>
+      _i10.ArticlesCubit(articlesRepository: get<_i5.ArticlesRepository>()));
   return get;
 }
 
-class _$RegisterModule extends _i10.RegisterModule {}
+class _$RegisterModule extends _i11.RegisterModule {}

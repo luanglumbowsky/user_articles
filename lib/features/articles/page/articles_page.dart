@@ -4,6 +4,7 @@ import 'package:user_articles/app/core/enums.dart';
 import 'package:user_articles/app/injection_container.dart';
 import 'package:user_articles/domain/models/article_model.dart';
 import 'package:user_articles/domain/models/author_model.dart';
+import 'package:user_articles/features/article_details/page/article_details_page.dart';
 import 'package:user_articles/features/articles/cubit/articles_cubit.dart';
 
 class ArticlesPage extends StatelessWidget {
@@ -96,7 +97,16 @@ class _ArticleItemWidget extends StatelessWidget {
         vertical: 10,
       ),
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+           Navigator.of(context).push(
+            MaterialPageRoute(
+              builder: (_) => ArticleDetailsPage(articleId: model.id
+                ),
+            ),
+          );
+
+
+        },
         child: Container(
           padding: const EdgeInsets.symmetric(
             horizontal: 20,

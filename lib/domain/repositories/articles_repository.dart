@@ -15,11 +15,11 @@ class ArticlesRepository {
         .toList();
   }
 
-   Future<List<ArticleDetailsModel>> getArticleById(int articleId) async {
+  Future<List<ArticleDetailsModel>> getArticleById(int articleId) async {
     final allArticles = await remoteDataSource.getArticlesDetails();
 
     return allArticles
-        .where((article) => article.articleId == articleId)
+        .where((article) => article.id == articleId)
         .toList();
   }
 }

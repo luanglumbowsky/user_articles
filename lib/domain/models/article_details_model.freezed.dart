@@ -23,9 +23,9 @@ class _$ArticleDetailsModelTearOff {
   const _$ArticleDetailsModelTearOff();
 
   _ArticleDetailsModel call(
-      int articleId, String content, String picture, String title) {
+      int id, String content, String picture, String title) {
     return _ArticleDetailsModel(
-      articleId,
+      id,
       content,
       picture,
       title,
@@ -42,7 +42,7 @@ const $ArticleDetailsModel = _$ArticleDetailsModelTearOff();
 
 /// @nodoc
 mixin _$ArticleDetailsModel {
-  int get articleId => throw _privateConstructorUsedError;
+  int get id => throw _privateConstructorUsedError;
   String get content => throw _privateConstructorUsedError;
   String get picture => throw _privateConstructorUsedError;
   String get title => throw _privateConstructorUsedError;
@@ -58,7 +58,7 @@ abstract class $ArticleDetailsModelCopyWith<$Res> {
   factory $ArticleDetailsModelCopyWith(
           ArticleDetailsModel value, $Res Function(ArticleDetailsModel) then) =
       _$ArticleDetailsModelCopyWithImpl<$Res>;
-  $Res call({int articleId, String content, String picture, String title});
+  $Res call({int id, String content, String picture, String title});
 }
 
 /// @nodoc
@@ -72,15 +72,15 @@ class _$ArticleDetailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? articleId = freezed,
+    Object? id = freezed,
     Object? content = freezed,
     Object? picture = freezed,
     Object? title = freezed,
   }) {
     return _then(_value.copyWith(
-      articleId: articleId == freezed
-          ? _value.articleId
-          : articleId // ignore: cast_nullable_to_non_nullable
+      id: id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       content: content == freezed
           ? _value.content
@@ -105,7 +105,7 @@ abstract class _$ArticleDetailsModelCopyWith<$Res>
           $Res Function(_ArticleDetailsModel) then) =
       __$ArticleDetailsModelCopyWithImpl<$Res>;
   @override
-  $Res call({int articleId, String content, String picture, String title});
+  $Res call({int id, String content, String picture, String title});
 }
 
 /// @nodoc
@@ -121,15 +121,15 @@ class __$ArticleDetailsModelCopyWithImpl<$Res>
 
   @override
   $Res call({
-    Object? articleId = freezed,
+    Object? id = freezed,
     Object? content = freezed,
     Object? picture = freezed,
     Object? title = freezed,
   }) {
     return _then(_ArticleDetailsModel(
-      articleId == freezed
-          ? _value.articleId
-          : articleId // ignore: cast_nullable_to_non_nullable
+      id == freezed
+          ? _value.id
+          : id // ignore: cast_nullable_to_non_nullable
               as int,
       content == freezed
           ? _value.content
@@ -150,14 +150,13 @@ class __$ArticleDetailsModelCopyWithImpl<$Res>
 /// @nodoc
 @JsonSerializable()
 class _$_ArticleDetailsModel implements _ArticleDetailsModel {
-  _$_ArticleDetailsModel(
-      this.articleId, this.content, this.picture, this.title);
+  _$_ArticleDetailsModel(this.id, this.content, this.picture, this.title);
 
   factory _$_ArticleDetailsModel.fromJson(Map<String, dynamic> json) =>
       _$$_ArticleDetailsModelFromJson(json);
 
   @override
-  final int articleId;
+  final int id;
   @override
   final String content;
   @override
@@ -167,7 +166,7 @@ class _$_ArticleDetailsModel implements _ArticleDetailsModel {
 
   @override
   String toString() {
-    return 'ArticleDetailsModel(articleId: $articleId, content: $content, picture: $picture, title: $title)';
+    return 'ArticleDetailsModel(id: $id, content: $content, picture: $picture, title: $title)';
   }
 
   @override
@@ -175,7 +174,7 @@ class _$_ArticleDetailsModel implements _ArticleDetailsModel {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _ArticleDetailsModel &&
-            const DeepCollectionEquality().equals(other.articleId, articleId) &&
+            const DeepCollectionEquality().equals(other.id, id) &&
             const DeepCollectionEquality().equals(other.content, content) &&
             const DeepCollectionEquality().equals(other.picture, picture) &&
             const DeepCollectionEquality().equals(other.title, title));
@@ -184,7 +183,7 @@ class _$_ArticleDetailsModel implements _ArticleDetailsModel {
   @override
   int get hashCode => Object.hash(
       runtimeType,
-      const DeepCollectionEquality().hash(articleId),
+      const DeepCollectionEquality().hash(id),
       const DeepCollectionEquality().hash(content),
       const DeepCollectionEquality().hash(picture),
       const DeepCollectionEquality().hash(title));
@@ -203,14 +202,14 @@ class _$_ArticleDetailsModel implements _ArticleDetailsModel {
 
 abstract class _ArticleDetailsModel implements ArticleDetailsModel {
   factory _ArticleDetailsModel(
-          int articleId, String content, String picture, String title) =
+          int id, String content, String picture, String title) =
       _$_ArticleDetailsModel;
 
   factory _ArticleDetailsModel.fromJson(Map<String, dynamic> json) =
       _$_ArticleDetailsModel.fromJson;
 
   @override
-  int get articleId;
+  int get id;
   @override
   String get content;
   @override

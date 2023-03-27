@@ -6,7 +6,8 @@ import 'package:user_articles/domain/repositories/articles_repository.dart';
 part 'articles_details_state.dart';
 
 class ArticleDetailsCubit extends Cubit<ArticleDetailsState> {
-  ArticleDetailsCubit({required this.articlesRepository}) : super(ArticleDetailsState());
+  ArticleDetailsCubit({required this.articlesRepository})
+      : super(ArticleDetailsState());
 
   final ArticlesRepository articlesRepository;
 
@@ -18,7 +19,7 @@ class ArticleDetailsCubit extends Cubit<ArticleDetailsState> {
     );
     await Future.delayed(const Duration(seconds: 1));
     try {
-      final results = await articlesRepository.getArticleById(articleId); 
+      final results = await articlesRepository.getArticleById(articleId);
       emit(
         ArticleDetailsState(
           status: Status.success,
@@ -29,7 +30,7 @@ class ArticleDetailsCubit extends Cubit<ArticleDetailsState> {
       emit(
         ArticleDetailsState(
           status: Status.error,
-          errorMessage: error.toString(),
+          errorMessage: 'no article found for id $articleId',
         ),
       );
     }

@@ -65,40 +65,55 @@ class _AuthorItemWidget extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Padding(
-      padding: const EdgeInsets.symmetric(
-        horizontal: 20,
-        vertical: 10,
-      ),
-      child: InkWell(
-        onTap: () {},
-        child: Container(
-          padding: const EdgeInsets.symmetric(
-            horizontal: 20,
-            vertical: 20,
-          ),
-          color: Colors.black12,
-          child: Row(
-            children: [
-              CircleAvatar(
-                backgroundImage: NetworkImage(
-                  model.picture,
-                ),
-              ),
-              const SizedBox(width: 10),
-              Expanded(
-                child: Text(model.title),
-              ),
-              const SizedBox(width: 10),
-              const Icon(
-                Icons.arrow_right,
-                color: Colors.black26,
-                size: 20,
-              ),
-            ],
+    return Column(
+      children: [
+        Padding(
+          padding: const EdgeInsets.all(20.0),
+          child: CircleAvatar(
+            backgroundImage: NetworkImage(
+              model.picture,
+            ),
+            radius: 70,
           ),
         ),
-      ),
+        Padding(
+          padding: const EdgeInsets.all(15.0),
+          child: Text(
+            model.title,
+            style: const TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+          ),
+        ),
+        Padding(
+          padding: const EdgeInsets.symmetric(
+            horizontal: 20,
+            vertical: 10,
+          ),
+          child: InkWell(
+            onTap: () {},
+            child: Container(
+              padding: const EdgeInsets.symmetric(
+                horizontal: 20,
+                vertical: 20,
+              ),
+              color: Colors.black12,
+              child: Row(
+                children: [
+                  const SizedBox(width: 10),
+                  Expanded(
+                    child: Text(model.content),
+                  ),
+                  const SizedBox(width: 10),
+                  const Icon(
+                    Icons.arrow_right,
+                    color: Colors.black26,
+                    size: 20,
+                  ),
+                ],
+              ),
+            ),
+          ),
+        ),
+      ],
     );
   }
 }

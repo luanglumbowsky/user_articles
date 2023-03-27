@@ -5,11 +5,12 @@ part 'article_details_model.freezed.dart';
 @freezed
 class ArticleDetailsModel with _$ArticleDetailsModel {
   factory ArticleDetailsModel(
-    int articleId,
+    int id,
     String content,
     String picture,
     String title,
-   ) = _ArticleDetailsModel;
+  ) = _ArticleDetailsModel;
 
-  factory ArticleDetailsModel.fromJson(Map<String, dynamic> json) => _$ArticleDetailsModelFromJson(json);
+  factory ArticleDetailsModel.fromJson(Map<String, dynamic> json) =>
+      _$ArticleDetailsModelFromJson(json);
 }
